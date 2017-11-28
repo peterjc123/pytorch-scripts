@@ -1,7 +1,18 @@
 It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
-# Comiling Examples
-You can download it in the PyTorch directory or use it standalone.
+# Easy Installation
+If you just want to install PyTorch as soon as possible.
+You'll need Anaconda with Python 3 first. And then type in the following commands.
+```Powershell
+# for Windows 10 / Server 2016
+conda install -c peterjc123 pytorch
+
+# for Windows 7,8,8.1 / Server 2008,2012
+conda install -c peterjc123 pytorch-legacy
+```
+
+# Compiling Examples
+You can download it and put it in the PyTorch directory or use it in a standalone way.
 ```Powershell
 # If you don't want to override the default settings
 auto.bat
