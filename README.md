@@ -12,7 +12,9 @@ conda install -c peterjc123 pytorch-legacy
 ```
 
 # About CI packages
+
 There may be chances that the conda package is stale and you want to try out new features. For this purpose, the CI packages are generated. 
+
 | System                   | 3.5                                      | 3.6                                      |
 | ------------------------ | ---------------------------------------- | ---------------------------------------- |
 | Windows CPU              | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch/branch/windows-full/2)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch/branch/windows-full/1)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/windows-full) |
