@@ -21,6 +21,7 @@ IF "%CUDA_PATH_V8_0%"=="" (
         set NO_CUDA=1
     ) ELSE (
         set "CUDA_PATH=%CUDA_PATH_V8_0%"
+        set PATH=%CUDA_PATH_V8_0%\bin;%PATH%
         set CMAKE_GENERATOR=Visual Studio 14 2015 Win64
         set "PREBUILD_COMMAND=%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat"
         set PREBUILD_COMMAND_ARGS=x86_amd64

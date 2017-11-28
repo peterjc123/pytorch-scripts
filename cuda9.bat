@@ -16,6 +16,7 @@ IF "%CUDA_PATH_V9_0%"=="" (
     set NO_CUDA=1
 ) ELSE (
     set "CUDA_PATH=%CUDA_PATH_V9_0%"
+    set PATH=%CUDA_PATH_V9_0%\bin;%PATH%
 )
 
 set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
