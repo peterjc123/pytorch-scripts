@@ -22,6 +22,10 @@ setlocal DisableDelayedExpansion
 
 :yes
 call "%VS15VCVARSALL%" x86_amd64
+
+IF NOT exist "setup.py" (
+    cd pytorch
+)
 python setup.py install
 
 :no
