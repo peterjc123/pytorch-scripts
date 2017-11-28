@@ -1,6 +1,6 @@
 @echo off
 
-IF NOT exist "setup.py" (
+IF NOT EXIST "setup.py" IF NOT EXIST "pytorch" (
     call internal\clone.bat
     IF ERRORLEVEL 1 goto eof
 )
