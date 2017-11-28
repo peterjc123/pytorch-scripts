@@ -58,7 +58,7 @@ pip install pytorch-[version]-cp[pyversion]-cp[pyversion]m-win-amd64.whl
 
 Note: You may face with the following issue. First, check that all the dependencies are installed. Second, try if a fresh virtual environment helps. If it helps, it may be an issue of the python version. Finally, you may have to manually compile PyTorch from source.
 
-```pycon
+```pytb
 C:\Anaconda2\lib\site-packages\torch\__init__.pyc in <module>()
      39     os.environ['PATH'] = os.path.dirname(__file__) + '\\lib\\;' + os.environ['PATH']
      40
