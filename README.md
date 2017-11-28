@@ -2,7 +2,7 @@ It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
 # Comiling Examples
 You can download it in the PyTorch directory or use it standalone.
-```CMD
+```Powershell
 # If you don't want to override the default settings
 auto.bat
 
