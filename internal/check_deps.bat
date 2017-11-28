@@ -2,6 +2,18 @@
 
 REM Check for necessary components
 
+IF NOT "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
+    echo You should use 64 bits Windows to build and run PyTorch
+    exit /b 1
+)
+
+where /q cmake.exe
+
+IF ERRORLEVEL 1 (
+    echo CMake is required to compile PyTorch on Windows
+    exit /b 1
+)
+
 IF NOT EXIST "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
     echo Visual Studio 2017 C++ BuildTools is required to compile PyTorch on Windows
     exit /b 1
@@ -28,7 +40,7 @@ IF NOT "%VS15VCVARSALL%"=="" IF NOT "%VS140COMNTOOLS%"=="" (
 where /q python.exe
 
 IF ERRORLEVEL 1 (
-    echo Python is required to compile PyTorch on Windows
+    echo Python x64 3.5 or up is required to compile PyTorch on Windows
     exit /b 1
 )
 
@@ -37,9 +49,18 @@ for /F "usebackq delims=" %%i in (`python -c "import sys; print('{0[0]}{0[1]}'.f
 )
 
 if  %PYVER% LSS 35 (
-    echo Python 3.5 or up is required to compile PyTorch on Windows
+    echo Python x64 3.5 or up is required to compile PyTorch on Windows
     echo Maybe you can create a virual environment if you have conda installed:
     echo ^> conda create -n test python=3.6 pyyaml mkl numpy
     echo ^> activate test
+    exit /b 1
+)
+
+for /F "usebackq delims=" %%i in (`python -c "import struct;print( 8 * struct.calcsize('P'))"`) do (
+    set /a PYSIZE=%%i
+)
+
+if %PYSIZE% NEQ 64 (
+    echo Python x64 3.5 or up is required to compile PyTorch on Windows
     exit /b 1
 )
