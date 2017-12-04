@@ -2,8 +2,11 @@ It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
 # Easy Installation
 If you just want to install PyTorch as soon as possible.
-You'll need Anaconda with Python 3 first. And then type in the following commands.
+You'll need Anaconda first. And then type in the following commands.
 ```Powershell
+# If your main Python version is not 3.5 or 3.6
+conda create -n test python=3.6 numpy pyyaml mkl
+
 # for Windows 10 / Server 2016
 conda install -c peterjc123 pytorch
 
@@ -15,15 +18,12 @@ conda install -c peterjc123 pytorch-legacy
 
 There may be chances that the conda package is stale and you want to try out new features. For this purpose, the CI packages are generated. 
 
-| System                   | 3.5                                      | 3.6                                      |
-| ------------------------ | ---------------------------------------- | ---------------------------------------- |
-| Windows CPU              | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch/branch/windows-full/2)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch/branch/windows-full/1)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/windows-full) |
-| Windows 7 GPU (Pascal)   | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/8)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/7)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
-| Windows 7 GPU (Maxwell)  | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/4)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/3)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
-| Windows 7 GPU (Kepler)   | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/12)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/11)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
-| Windows 10 GPU (Pascal)  | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/6)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/5)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
-| Windows 10 GPU (Maxwell) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/2)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/1)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
-| Windows 10 GPU (Kepler)  | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/10)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) | [![Build Status](http://appveyor-badge.azurewebsites.net/repos/peterjc123/pytorch-elheu/branch/windows-full/9)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
+| System                   | All                                      |
+| ------------------------ | ---------------------------------------- |
+| Windows CPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/windows-full) |
+| Windows GPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
+| Windows CPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.0_win) |
+| Windows GPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.0_win) |
 
 ## How to find the package and install?
 
