@@ -20,7 +20,7 @@ IF "%CUDA_PATH_V8_0%"==""  IF "%CUDA_PATH_V9_0%"=="" (
 )
 
 IF "%NVTOOLSEXT_PATH%"=="" (
-    echo NVTX (Visual Studio Extension for CUDA) not installed, disabling CUDA
+    echo NVTX ^(Visual Studio Extension ^for CUDA^) ^not installed, disabling CUDA
     set NO_CUDA=1
     goto optcheck
 )

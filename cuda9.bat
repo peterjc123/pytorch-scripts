@@ -14,7 +14,7 @@ set NO_CUDA=
 set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
 
 IF "%NVTOOLSEXT_PATH%"=="" (
-    echo NVTX (Visual Studio Extension for CUDA) not installed, disabling CUDA
+    echo NVTX ^(Visual Studio Extension ^for CUDA^) ^not installed, disabling CUDA
     set NO_CUDA=1
     goto optcheck
 )
