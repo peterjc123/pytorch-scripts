@@ -7,11 +7,14 @@ You'll need Anaconda first. And then type in the following commands.
 # If your main Python version is not 3.5 or 3.6
 conda create -n test python=3.6 numpy pyyaml mkl
 
-# for Windows 10 / Server 2016
-conda install -c peterjc123 pytorch
+# for Windows 10 and Windows Server 2016, CUDA 8
+conda install -c peterjc123 pytorch cuda80
 
-# for Windows 7,8,8.1 / Server 2008,2012
-conda install -c peterjc123 pytorch-legacy
+# for Windows 10 and Windows Server 2016, CUDA 9
+conda install -c peterjc123 pytorch cuda90
+
+# for Windows 7/8/8.1 and Windows Server 2008/2012, CUDA 8
+conda install -c peterjc123 pytorch_legacy cuda80
 ```
 
 # About CI packages
