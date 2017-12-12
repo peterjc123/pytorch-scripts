@@ -16,6 +16,7 @@ conda install -c peterjc123 pytorch cuda90
 # for Windows 7/8/8.1 and Windows Server 2008/2012, CUDA 8
 conda install -c peterjc123 pytorch_legacy cuda80
 ```
+Sometimes the new packages may not work, when that happens, you may try the legacy packages [here](https://drive.google.com/drive/folders/0B-X0-FlSGfCYdTNldW02UGl4MXM?usp=sharing). If you are from China, then the files are stored in Baidu Netdisk. You can access them through this [link](https://pan.baidu.com/s/1dF6ayLr).
 
 # About CI packages
 
