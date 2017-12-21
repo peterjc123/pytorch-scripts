@@ -33,9 +33,8 @@ IF "%VS15VCVARSALL%"=="" (
     exit /b 1
 )
 
-IF NOT "%VS15VCVARSALL%"=="" IF NOT "%VS140COMNTOOLS%"=="" (
-    set DISTUTILS_USE_SDK=1
-)
+set MSSdk=1
+set DISTUTILS_USE_SDK=1
 
 where /q python.exe
 
