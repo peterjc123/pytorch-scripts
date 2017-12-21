@@ -48,11 +48,11 @@ for /F "usebackq delims=" %%i in (`python -c "import sys; print('{0[0]}{0[1]}'.f
 )
 
 if  %PYVER% LSS 35 (
-    echo Python x64 3.5 or up is required to compile PyTorch on Windows
+    echo Warning: PyTorch for Python 2 under Windows is experimental.
+    echo Python x64 3.5 or up is recommended to compile PyTorch on Windows
     echo Maybe you can create a virual environment if you have conda installed:
     echo ^> conda create -n test python=3.6 pyyaml mkl numpy
     echo ^> activate test
-    exit /b 1
 )
 
 for /F "usebackq delims=" %%i in (`python -c "import struct;print( 8 * struct.calcsize('P'))"`) do (
