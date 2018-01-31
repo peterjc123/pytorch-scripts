@@ -31,6 +31,8 @@ There may be chances that the conda package is stale and you want to try out new
 | Windows GPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
 | Windows CPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.0_win) |
 | Windows GPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.0_win) |
+| Windows CPU (0.3.1 Pre)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.1_win) |
+| Windows GPU (0.3.1 Pre)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.1_win) |
 
 ## How to find the package and install?
 
@@ -63,7 +65,7 @@ Installation is simple, but there're some requirements.
 pip install pytorch-[version]-cp[pyversion]-cp[pyversion]m-win-amd64.whl
 ```
 
-Note: You may face with the following issue. First, check that all the dependencies are installed. Second, try if a fresh virtual environment helps. If it helps, it may be an issue of the python version. Finally, you may have to manually compile PyTorch from source.
+Note: You may face with the following issue. First, check that all the dependencies are installed. Second, try if a fresh virtual environment helps. If it helps, it may be an issue of the python version. And you can install VC 2017 Redist. Finally, you may have to manually compile PyTorch from source.
 
 ```pytb
 C:\Anaconda2\lib\site-packages\torch\__init__.pyc in <module>()
