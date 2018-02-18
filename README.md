@@ -1,7 +1,8 @@
 It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
 # Easy Installation
-If you just want to install PyTorch as soon as possible.
+If you just want to install PyTorch as soon as possible, you can try this one out.
+The current version of the conda package for PyTorch is 0.3.0.
 You'll need Anaconda first. And then type in the following commands.
 ```Powershell
 # If your main Python version is not 3.5 or 3.6
@@ -19,6 +20,7 @@ conda install -c peterjc123 pytorch cuda90
 # for Windows 7/8/8.1 and Windows Server 2008/2012, CUDA 8
 conda install -c peterjc123 pytorch_legacy cuda80
 ```
+If there's conflict against vc14, you may see workground [here](https://github.com/peterjc123/pytorch-scripts/issues/3).
 Sometimes the new packages may not work, when that happens, you may try the legacy packages [here](https://drive.google.com/drive/folders/0B-X0-FlSGfCYdTNldW02UGl4MXM?usp=sharing). If you are from China, then the files are stored in Baidu Netdisk. You can access them through this [link](https://pan.baidu.com/s/1dF6ayLr).
 
 # About CI packages
@@ -31,8 +33,8 @@ There may be chances that the conda package is stale and you want to try out new
 | Windows GPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
 | Windows CPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.0_win) |
 | Windows GPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.0_win) |
-| Windows CPU (0.3.1 Pre)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.1_win) |
-| Windows GPU (0.3.1 Pre)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.1_win) |
+| Windows CPU (0.3.1)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.1_win) |
+| Windows GPU (0.3.1)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.1_win) |
 
 ## How to find the package and install?
 
