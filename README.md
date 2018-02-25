@@ -2,23 +2,23 @@ It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
 # Easy Installation
 If you just want to install PyTorch as soon as possible, you can try this one out.
-The current version of the conda package for PyTorch is 0.3.0.
+The current version of the conda package for PyTorch is 0.3.1.
 You'll need Anaconda first. And then type in the following commands.
 ```Powershell
 # If your main Python version is not 3.5 or 3.6
 conda create -n test python=3.6 numpy pyyaml mkl
 
 # for CPU only packages
-conda install -c peterjc123 pytorch
+conda install -c peterjc123 pytorch-cpu
 
 # for Windows 10 and Windows Server 2016, CUDA 8
-conda install -c peterjc123 pytorch cuda80
+conda install -c peterjc123 pytorch
 
 # for Windows 10 and Windows Server 2016, CUDA 9
 conda install -c peterjc123 pytorch cuda90
 
 # for Windows 7/8/8.1 and Windows Server 2008/2012, CUDA 8
-conda install -c peterjc123 pytorch_legacy cuda80
+conda install -c peterjc123 pytorch_legacy
 ```
 If there's conflict against vc14, you may see workground [here](https://github.com/peterjc123/pytorch-scripts/issues/3).
 Sometimes the new packages may not work, when that happens, you may try the legacy packages [here](https://drive.google.com/drive/folders/0B-X0-FlSGfCYdTNldW02UGl4MXM?usp=sharing). If you are from China, then the files are stored in Baidu Netdisk. You can access them through this [link](https://pan.baidu.com/s/1dF6ayLr).
