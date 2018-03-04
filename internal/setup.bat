@@ -21,7 +21,12 @@ IF /I "%~1" NEQ "/y" (
 setlocal DisableDelayedExpansion
 
 :yes
+
+set SRC_DIR=%~dp0\..
+
 call "%VS15VCVARSALL%" x86_amd64
+
+pushd %SRC_DIR%
 
 IF NOT exist "setup.py" (
     cd pytorch

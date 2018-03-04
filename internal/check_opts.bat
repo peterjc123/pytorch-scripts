@@ -21,3 +21,5 @@ IF exist "%MKLProductDir%\mkl\lib\intel64_win" (
     echo MKL found, adding it to build
     set "LIB=%MKLProductDir%\mkl\lib\intel64_win;%LIB%";
 )
+
+exit /b 0

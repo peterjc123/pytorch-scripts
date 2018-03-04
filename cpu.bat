@@ -2,6 +2,7 @@
 
 IF NOT EXIST "setup.py" IF NOT EXIST "pytorch" (
     call internal\clone.bat
+    cd ..
     IF ERRORLEVEL 1 goto eof
 )
 
