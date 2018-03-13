@@ -24,6 +24,7 @@ Plus: The support for old NV cards (Compute Capability <= 5.0) is over.
 There're mainly two ways to resolve this:
 1. You can install legacy packages. See description in this section below.
 2. Install CI packages. However, you have to handle the dependencies by yourself. See __About CI packages__ for details.
+
 If there's conflict against vc14, you may see workground [here](https://github.com/peterjc123/pytorch-scripts/issues/3).
 Sometimes the new packages may not work, when that happens, you may try the legacy packages [here](https://drive.google.com/drive/folders/0B-X0-FlSGfCYdTNldW02UGl4MXM?usp=sharing). If you are from China, then the files are stored in Baidu Netdisk. You can access them through this [link](https://pan.baidu.com/s/1dF6ayLr).
 
