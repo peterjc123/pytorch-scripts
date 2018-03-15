@@ -24,8 +24,8 @@ IF "%CUDA_PATH_V9_1%"=="" (
     echo CUDA 9.1 not found, disabling it
     set NO_CUDA=1
 ) ELSE (
-    set "CUDA_PATH=%CUDA_PATH_V9_0%"
-    set PATH=%CUDA_PATH_V9_0%\bin;%PATH%
+    set "CUDA_PATH=%CUDA_PATH_V9_1%"
+    set PATH=%CUDA_PATH_V9_1%\bin;%PATH%
 )
 
 :optcheck
