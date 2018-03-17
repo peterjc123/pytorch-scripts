@@ -87,6 +87,7 @@ ImportError: DLL load failed: The specified procedure could not be found.
 
 # Compiling Examples
 You can download it and put it in the PyTorch directory or use it in a standalone way.
+There're more details about MSVC 2017 setup in #23.
 ```Powershell
 # If you don't want to override the default settings
 auto.bat
