@@ -17,6 +17,10 @@ IF NOT ERRORLEVEL 1 (
     set CXX=clcache
 )
 
+IF "%MKLProductDir%" == "" IF exist "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows" (
+    set "MKLProductDir=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows";
+)
+
 IF exist "%MKLProductDir%\mkl\lib\intel64_win" (
     echo MKL found, adding it to build
     set "LIB=%MKLProductDir%\mkl\lib\intel64_win;%LIB%";
