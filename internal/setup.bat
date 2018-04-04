@@ -24,7 +24,7 @@ setlocal DisableDelayedExpansion
 
 set SRC_DIR=%~dp0\..
 
-call "%VS15VCVARSALL%" x86_amd64
+call "%VS15VCVARSALL%" x64 -vcvars_ver=14.11
 
 pushd %SRC_DIR%
 
