@@ -36,16 +36,12 @@ There may be chances that the conda package is stale and you want to try out new
 | ------------------------ | ---------------------------------------- |
 | Windows CPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/windows-full) |
 | Windows GPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
-| Windows CPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.0_win) |
-| Windows GPU (0.3.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.0_win) |
-| Windows CPU (0.3.1)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.3.1_win) |
-| Windows GPU (0.3.1)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.3.1_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.3.1_win) |
+| Windows CPU (0.4.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.4.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.4.0_win) |
+| Windows GPU (0.4.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.4.0_win?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.4.0_win) |
 
 ## How to find the package and install?
 
 You can first click the icon to get to the main page of the CI system for a certain package. You can see a few jobs under that page. There're several variables that is used to distinguish the packages.
-
-- **APPVEYOR\_BUILD\_WORKER_IMAGE** : VS 2015/2017 This **does not** indicate the compiler it used, but the **system** it can run on. The former one can be used on Windows 7/8/8.1 and Windows Server 2008/2012, while the latter on Windows 10 and Windows Server 2016.
 
 
 - **PYTHON_VERSION** : This one indicates the python version it use. 
@@ -64,8 +60,8 @@ Installation is simple, but there're some requirements.
 # MKL/Numpy/PyYAML
 
 # For GPU versions
-# CUDA 8
-# cuDNN 6
+# CUDA 9 / 9.1
+# cuDNN 7
 # NVTX (Visual Studio Integration in CUDA. if it fails to be installed, you can extract
 #       the CUDA installer exe and found the NVTX installer under the CUDAVisualStudioIntegration)
 
