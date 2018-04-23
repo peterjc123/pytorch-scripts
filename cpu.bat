@@ -13,6 +13,7 @@ REM Check for optional components
 
 echo Disabling CUDA
 set NO_CUDA=1
+set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
 
 call internal\check_opts.bat
 IF ERRORLEVEL 1 goto eof
