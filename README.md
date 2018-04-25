@@ -1,6 +1,7 @@
 It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
 # Easy Installation
+**Update: Starting from 0.4.0, you can go to the [official site](http://pytorch.org) for installation steps. The packages here will not be updated.**
 If you just want to install PyTorch as soon as possible, you can try this one out.
 The current version of the conda package for PyTorch is 0.3.1.
 You'll need Anaconda first. And then type in the following commands.
