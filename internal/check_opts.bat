@@ -24,7 +24,7 @@ IF "%MKLProductDir%" == "" IF exist "C:\Program Files (x86)\IntelSWTools\compile
 IF exist "%MKLProductDir%\mkl\lib\intel64_win" (
     echo MKL found, adding it to build
     set "CMAKE_INCLUDE_PATH=%MKLProductDir%\mkl\include"
-    set "LIB=%MKLProductDir%\mkl\lib\intel64_win;%LIB%";
+    set "LIB=%MKLProductDir%\mkl\lib\intel64_win;%MKLProductDir%\compiler\lib\intel64_win;%LIB%";
 )
 
 exit /b 0
