@@ -110,7 +110,7 @@ cuda91.bat
 
 import torch
 
-def main()
+def main():
     for i, (x, y) in dataloader:
         # do something here
 
