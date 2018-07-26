@@ -39,6 +39,8 @@ There may be chances that the conda package is stale and you want to try out new
 | Windows GPU (master)     | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/windows-full?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/windows-full) |
 | Windows CPU (0.4.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.4.0?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.4.0) |
 | Windows GPU (0.4.0)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.4.0?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.4.0) |
+| Windows CPU (0.4.1)      | [![Build status](https://ci.appveyor.com/api/projects/status/8xiih9d2w4pwnq4k/branch/v0.4.1?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch/branch/v0.4.1) |
+| Windows GPU (0.4.1)      | [![Build status](https://ci.appveyor.com/api/projects/status/y6geguaq83igjh58/branch/v0.4.1?svg=true)](https://ci.appveyor.com/project/peterjc123/pytorch-elheu/branch/v0.4.1) |
 
 ## How to find the package and install?
 
