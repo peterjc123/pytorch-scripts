@@ -88,6 +88,10 @@ ImportError: DLL load failed: The specified procedure could not be found.
 You can download it and put it in the PyTorch directory or use it in a standalone way.
 There're more details about MSVC 2017 setup in [#23](https://github.com/peterjc123/pytorch-scripts/issues/23).
 ```Powershell
+# You can specify which version you want to build
+# If you omit it, it will build for the master branch on default
+set PYTORCH_BUILD_VERSION=0.4.1
+
 # If you don't want to override the default settings
 auto.bat
 

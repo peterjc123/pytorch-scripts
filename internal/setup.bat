@@ -7,6 +7,7 @@ if "%NO_CUDA%"==""  echo CUDA_PATH=%CUDA_PATH%
 if NOT "%CC%"==""   echo CC=%CC%
 if NOT "%CXX%"==""  echo CXX=%CXX%
 if NOT "%DISTUTILS_USE_SDK%"==""  echo DISTUTILS_USE_SDK=%DISTUTILS_USE_SDK%
+IF NOT "%PYTORCH_BUILD_VERSION%"=="" echo PYTORCH_BUILD_VERSION=%PYTORCH_BUILD_VERSION%
 
 setlocal EnableDelayedExpansion
 IF /I "%~1" NEQ "/y" (
