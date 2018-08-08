@@ -1,6 +1,6 @@
 @echo off
 
-echo The flags after configuring:
+echo The flags after configuration:
 echo NO_CUDA=%NO_CUDA%
 echo CMAKE_GENERATOR=%CMAKE_GENERATOR%
 if "%NO_CUDA%"==""  echo CUDA_PATH=%CUDA_PATH%
@@ -8,6 +8,7 @@ if NOT "%CC%"==""   echo CC=%CC%
 if NOT "%CXX%"==""  echo CXX=%CXX%
 if NOT "%DISTUTILS_USE_SDK%"==""  echo DISTUTILS_USE_SDK=%DISTUTILS_USE_SDK%
 IF NOT "%PYTORCH_BUILD_VERSION%"=="" echo PYTORCH_BUILD_VERSION=%PYTORCH_BUILD_VERSION%
+IF "%NO_CUDA%"=="" IF NOT "%MAGMA_HOME%"=="" echo MAGMA_HOME=%MAGMA_HOME%
 
 setlocal EnableDelayedExpansion
 IF /I "%~1" NEQ "/y" (
@@ -33,6 +34,8 @@ IF NOT exist "setup.py" (
     cd pytorch
 )
 python setup.py install
+
+goto :eof
 
 :no
 exit /b 1
