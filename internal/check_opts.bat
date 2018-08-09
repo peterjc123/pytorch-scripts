@@ -30,7 +30,7 @@ IF exist "%MKLProductDir%\mkl\lib\intel64_win" (
     set "LIB=%MKLProductDir%\mkl\lib\intel64_win;%MKLProductDir%\compiler\lib\intel64_win;%LIB%";
 )
 
-if "%NO_CUDA%"==""(
+if "%NO_CUDA%"=="" (
     IF "%MAGMA_HOME%" == "" (
         echo MAGMA_HOME is set. MAGMA will be inclued in build.
     ) ELSE (
