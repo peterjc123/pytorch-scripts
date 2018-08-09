@@ -68,7 +68,9 @@ Installation is simple, but there're some requirements.
 # NVTX (Visual Studio Integration in CUDA. if it fails to be installed, you can extract
 #       the CUDA installer exe and found the NVTX installer under the CUDAVisualStudioIntegration)
 
+pip install numpy mkl intel-openmp
 pip install pytorch-[version]-cp[pyversion]-cp[pyversion]m-win-amd64.whl
+# Add [PythonRoot]\Library\bin into environment variable `PATH` and restart command prompt before using.
 ```
 
 Note: You may face with the following issue. First, check that all the dependencies are installed. Second, try if a fresh virtual environment helps. If it helps, it may be an issue of the python version. And you can install VC 2017 Redist. Finally, you may have to manually compile PyTorch from source.
