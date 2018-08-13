@@ -53,7 +53,25 @@ if  %PYVER% LSS 35 (
     echo Maybe you can create a virual environment if you have conda installed:
     echo ^> conda create -n test python=3.6 pyyaml mkl numpy
     echo ^> activate test
+) ELSE (
+    goto after_py27
 )
+
+setlocal EnableDelayedExpansion
+IF /I "%~1" NEQ "/y" (
+:reask
+    echo Do you still want to build PyTorch for Python 2.7 on Windows anyway? (Y/N^)
+    set INPUT=
+    set /P INPUT=Type input: %=%
+    If /I "!INPUT!"=="y" goto yes 
+    If /I "!INPUT!"=="n" goto no
+    goto reask
+)
+setlocal DisableDelayedExpansion
+
+set FORCE_PY27_BUILD=1
+
+:after_py27
 
 for /F "usebackq delims=" %%i in (`python -c "import struct;print( 8 * struct.calcsize('P'))"`) do (
     set /a PYSIZE=%%i
