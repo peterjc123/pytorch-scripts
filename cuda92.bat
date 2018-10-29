@@ -1,5 +1,9 @@
 @echo off
 
+IF /I "%~1" == "/y" (
+    set NO_PROMPT=1
+)
+
 IF NOT EXIST "setup.py" IF NOT EXIST "pytorch" (
     call internal\clone.bat
     cd ..
