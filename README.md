@@ -90,6 +90,7 @@ ImportError: DLL load failed: The specified procedure could not be found.
 You can download it and put it in the PyTorch directory or use it in a standalone way.
 There're more details about MSVC 2017 setup in [#23](https://github.com/peterjc123/pytorch-scripts/issues/23).
 ```Powershell
+################################################################################
 # These are the flags that you can set before running the scripts.
 ################################################################################
 
@@ -113,7 +114,7 @@ set SKIP_VS_VER_CHECK=1
 # If you want to skip prompt for building for Python 2.7 (Not recommended)
 set SKIP_PY_VER_CHECK=1
 
-
+################################################################################
 # These are the available scripts that you can use.
 ################################################################################
 
