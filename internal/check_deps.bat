@@ -57,7 +57,7 @@ if  %PYVER% LSS 35 (
     goto after_py27
 )
 
-IF "%SKIP_VS_VER_CHECK%" == "1" (
+IF "%SKIP_PY_VER_CHECK%" == "1" (
     goto after_py27
 )
 
