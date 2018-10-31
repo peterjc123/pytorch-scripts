@@ -11,7 +11,7 @@ IF NOT "%PYTORCH_BUILD_VERSION%"=="" echo PYTORCH_BUILD_VERSION=%PYTORCH_BUILD_V
 IF "%NO_CUDA%"=="" IF NOT "%MAGMA_HOME%"=="" echo MAGMA_HOME=%MAGMA_HOME%
 
 setlocal EnableDelayedExpansion
-IF /I "%~1" NEQ "/y" (
+IF NOT "%NO_PROMPT%" == "1" (
 :reask
     echo Do you wish to continue? (Y/N^)
     set INPUT=
@@ -26,7 +26,26 @@ setlocal DisableDelayedExpansion
 
 set SRC_DIR=%~dp0\..
 
+setlocal
 call "%VS15VCVARSALL%" x64 -vcvars_ver=14.11
+call "%VS15VCVARSALL%" x86_amd64 -vcvars_ver=14.11
+where /q cl.exe
+
+IF ERRORLEVEL 1 (
+    echo VS 14.11 toolset not found
+    endlocal
+    IF NOT "%SKIP_VS_VER_CHECK%" == "1" (
+        echo Use ^`set SKIP_VS_VER_CHECK^=1^` to override this error.
+        goto no
+    )
+) ELSE (
+    goto reactivate_end
+)
+
+call "%VS15VCVARSALL%" x64
+call "%VS15VCVARSALL%" x86_amd64
+
+:reactivate_end
 
 pushd %SRC_DIR%
 

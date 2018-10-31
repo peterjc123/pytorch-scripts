@@ -1,6 +1,10 @@
 @echo off
 
-git clone --recursive https://github.com/pytorch/pytorch
+IF "%PYTORCH_REPO%" == "" set PYTORCH_REPO=pytorch
+
+git clone --recursive --jobs %NUMBER_OF_PROCESSORS% https://github.com/%PYTORCH_REPO%/pytorch
+
+cd pytorch
 
 IF NOT "%PYTORCH_BUILD_VERSION%"=="" (
     git checkout tags/v%PYTORCH_BUILD_VERSION%
@@ -10,6 +14,11 @@ IF NOT "%PYTORCH_BUILD_VERSION%"=="" (
     ) ELSE (
         echo Building for version %PYTORCH_BUILD_VERSION%
     )
+) ELSE (
+    IF NOT "%PYTORCH_BRANCH%" == "" git checkout %PYTORCH_BRANCH%
+    IF ERRORLEVEL 1 (
+        echo Branch %PYTORCH_BRANCH% not found, staying on the master branch
+    ) ELSE (
+        echo Building for branch %PYTORCH_BRANCH%
+    )
 )
-
-cd pytorch

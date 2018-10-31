@@ -24,12 +24,12 @@ IF "%NVTOOLSEXT_PATH%"=="" (
     goto optcheck
 )
 
-IF "%CUDA_PATH_V9_0%"=="" (
-    echo CUDA 9 not found, disabling it
+IF "%CUDA_PATH_V10_0%"=="" (
+    echo CUDA 9.2 not found, disabling it
     set NO_CUDA=1
 ) ELSE (
-    set "CUDA_PATH=%CUDA_PATH_V9_0%"
-    set "PATH=%CUDA_PATH_V9_0%\bin;%PATH%"
+    set "CUDA_PATH=%CUDA_PATH_V10_0%"
+    set "PATH=%CUDA_PATH_V10_0%\bin;%PATH%"
 )
 
 :optcheck
