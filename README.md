@@ -90,9 +90,32 @@ ImportError: DLL load failed: The specified procedure could not be found.
 You can download it and put it in the PyTorch directory or use it in a standalone way.
 There're more details about MSVC 2017 setup in [#23](https://github.com/peterjc123/pytorch-scripts/issues/23).
 ```Powershell
+# These are the flags that you can set before running the scripts.
+################################################################################
+
 # You can specify which version you want to build
 # If you omit it, it will build for the master branch on default
 set PYTORCH_BUILD_VERSION=0.4.1
+
+# If you want to build your own fork of PyTorch
+set PYTORCH_REPO=pytorch
+
+# If you want to build for a specific branch
+# Note: If you specify PYTORCH_BUILD_VERSION too, it won't be used.
+set PYTORCH_BRANCH=master
+
+# If you want to skip the confirmation of the flags configured by our script
+set NO_PROMPT=1
+
+# If you want to continue build without a verified VS version (Safe for CPU builds)
+set SKIP_VS_VER_CHECK=1
+
+# If you want to skip prompt for building for Python 2.7 (Not recommended)
+set SKIP_PY_VER_CHECK=1
+
+
+# These are the available scripts that you can use.
+################################################################################
 
 # If you don't want to override the default settings
 auto.bat
@@ -108,6 +131,12 @@ cuda90.bat
 
 # If you want to compile with CUDA 9.1
 cuda91.bat
+
+# If you want to compile with CUDA 9.2
+cuda92.bat
+
+# If you want to compile with CUDA 10.0
+cuda100.bat
 
 ```
 
