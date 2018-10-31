@@ -20,6 +20,22 @@ IF NOT ERRORLEVEL 1 (
     set CXX=clcache
 )
 
+where /q sccache.exe
+
+IF NOT ERRORLEVEL 1 (
+    echo sccache found, using it to speed up builds
+    IF "%CC%" == "" (
+        set CC=sccache cl
+    ) ELSE (
+        set CC=sccache %CC%
+    )
+    IF "%CXX%" == "" (
+        set CXX=sccache cl
+    ) ELSE (
+        set CXX=sccache %CXX%
+    )
+)
+
 IF "%MKLProductDir%" == "" IF exist "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows" (
     set "MKLProductDir=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows";
 )
