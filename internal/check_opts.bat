@@ -48,7 +48,7 @@ IF exist "%MKLProductDir%\mkl\lib\intel64_win" (
 
 if "%NO_CUDA%"=="" (
     IF "%MAGMA_HOME%" == "" (
-        echo MAGMA_HOME is set. MAGMA will be inclued in build.
+        echo MAGMA_HOME is set. MAGMA will be included in build.
     ) ELSE (
         echo MAGMA_HOME not set. Skip MAGMA in build.
     )

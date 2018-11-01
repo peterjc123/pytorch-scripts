@@ -24,6 +24,8 @@ setlocal DisableDelayedExpansion
 
 :yes
 
+IF NOT "%CMAKE_GENERATOR%" == "Ninja" goto reactivate_end
+
 set SRC_DIR=%~dp0\..
 
 setlocal
