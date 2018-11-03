@@ -17,19 +17,30 @@ REM Check for optional components
 
 set NO_CUDA=
 set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
-
-IF "%NVTOOLSEXT_PATH%"=="" (
-    echo NVTX ^(Visual Studio Extension ^for CUDA^) ^not installed, disabling CUDA
-    set NO_CUDA=1
-    goto optcheck
-)
+set CUDA_VERSION=90
+set CUDA_VERSION_STR=9.0
 
 IF "%CUDA_PATH_V9_0%"=="" (
-    echo CUDA 9 not found, disabling it
-    set NO_CUDA=1
-) ELSE (
-    set "CUDA_PATH=%CUDA_PATH_V9_0%"
-    set "PATH=%CUDA_PATH_V9_0%\bin;%PATH%"
+    IF %AUTO_RESOLVE_VALUE% GEQ 1 (
+        call internal\auto_resolve.bat cuda90
+        IF ERRORLEVEL 1 goto eof
+    ) ELSE (
+        echo CUDA 9.0 not found
+        goto eof
+    )
+)
+
+set "CUDA_PATH=%CUDA_PATH_V9_0%"
+set "PATH=%CUDA_PATH_V9_0%\bin;%PATH%"
+
+IF "%NVTOOLSEXT_PATH%"=="" (
+    IF %AUTO_RESOLVE_VALUE% GEQ 1 (
+        call internal\auto_resolve.bat nvtx
+        IF ERRORLEVEL 1 goto eof
+    ) ELSE (
+        echo NVTX ^(Visual Studio Extension ^for CUDA^) ^not installed
+        goto eof
+    )
 )
 
 :optcheck
