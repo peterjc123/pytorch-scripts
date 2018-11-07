@@ -22,7 +22,7 @@ if NOT DEFINED CLEAR_BUILD_FOLDER_AND_START_AGAIN (
 
 rem Debug build enabled by default
 if NOT DEFINED BUILD_DEBUG (
-    set BUILD_DEBUG=0
+    set BUILD_DEBUG=1
 )
 
 rem Release build enabled by default
