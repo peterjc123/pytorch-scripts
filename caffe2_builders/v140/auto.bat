@@ -1,5 +1,5 @@
 rem Remove to original folder after script is finished
-set ORIGINAL_DIR=%cd%
+set ORIGINAL_DIR=%~dp0
 
 rem Build folders are 
 rem %CAFFE2_ROOT%\build\Debug for Debug and
@@ -89,13 +89,13 @@ if not exist %CAFFE2_ROOT%\build (
 rem Building Debug in %CAFFE2_ROOT%\build\Debug
 if %BUILD_DEBUG% EQU 1 (
     set CONFIG=Debug
-    call msbuild.bat
+    call %~dp0%msbuild.bat
 )
 
 rem Building Release in %CAFFE2_ROOT%\build\Release
 if %BUILD_RELEASE% EQU 1 (
     set CONFIG=Release
-    call msbuild.bat
+    call %~dp0%msbuild.bat
 )
 
 cd %ORIGINAL_DIR%
