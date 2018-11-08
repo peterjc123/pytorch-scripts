@@ -1,5 +1,5 @@
 rem Remove to original folder after script is finished
-set ORIGINAL_DIR=%~dp0
+set ORIGINAL_DIR=%cd%
 
 rem Build folders are 
 rem %CAFFE2_ROOT%\build\Debug for Debug and
