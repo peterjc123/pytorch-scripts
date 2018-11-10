@@ -2,7 +2,7 @@
 
 IF "%PYTORCH_REPO%" == "" set PYTORCH_REPO=pytorch
 
-git clone --recursive --jobs %NUMBER_OF_PROCESSORS% https://github.com/%PYTORCH_REPO%/pytorch
+git clone https://github.com/%PYTORCH_REPO%/pytorch
 
 cd pytorch
 
@@ -22,3 +22,5 @@ IF NOT "%PYTORCH_BUILD_VERSION%"=="" (
         echo Building for branch %PYTORCH_BRANCH%
     )
 )
+
+git submodule update --init --recursive
