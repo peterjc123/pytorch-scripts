@@ -31,12 +31,13 @@ if NOT DEFINED BUILD_RELEASE (
 
 rem msbuild /m: option value
 if NOT DEFINED MAX_JOBS (
-    set MAX_JOBS=6
+    set MAX_JOBS=%NUMBER_OF_PROCESSORS%
 )
 
 if %REBUILD% EQU 1 (
     if exist %CAFFE2_ROOT%\build (
-        rmdir %CAFFE2_ROOT%\build /s /q
+        cd %CAFFE2_ROOT%
+        python setup.py clean
     )
 )
 
@@ -89,13 +90,15 @@ if not exist %CAFFE2_ROOT%\build (
 rem Building Debug in %CAFFE2_ROOT%\build\Debug
 if %BUILD_DEBUG% EQU 1 (
     set CONFIG=Debug
-    call msbuild.bat
+    call %~dp0%msbuild.bat
+    if errorlevel 1 exit /b 1
 )
 
 rem Building Release in %CAFFE2_ROOT%\build\Release
 if %BUILD_RELEASE% EQU 1 (
     set CONFIG=Release
-    call msbuild.bat
+    call %~dp0%msbuild.bat
+    if errorlevel 1 exit /b 1
 )
 
 cd %ORIGINAL_DIR%

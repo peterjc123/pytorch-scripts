@@ -16,6 +16,8 @@ if %CMAKE_GENERATOR% EQU "Visual Studio 14 2015 Win64" (
                              -DBUILD_SHARED_LIBS=ON ^
                              -DBUILD_BINARY=ON
                                  
+    if errorlevel 1 exit /b 1
+    
     call %VC_BIN_ROOT%\vcvars64.bat
             
 ) else (
@@ -26,3 +28,5 @@ if %CMAKE_GENERATOR% EQU "Visual Studio 14 2015 Win64" (
 )
 
 msbuild /p:Configuration=%CONFIG% /p:Platform=x64 /m:%MAX_JOBS% INSTALL.vcxproj /p:PreferredToolArchitecture=x64
+if errorlevel 1 exit /b 1
+
