@@ -4,7 +4,7 @@ variables:
   pytorch.repo: pytorch
   build.pytorch.enabled: true
   build.caffe.enabled: true
-  use.sccache: true
+  use.sccache: false
 
 jobs:
 - job: 'PyTorch_Test'
