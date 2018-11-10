@@ -120,7 +120,7 @@ jobs:
 
       modifyEnvironment: true
 
-  - script: 'if exist caffe2_builders/v140/auto.bat call caffe2_builders/v140/auto.bat'
+  - script: 'call caffe2_builders/v140/auto.bat'
     displayName: Build
     env:
       MAX_JOBS: 2
