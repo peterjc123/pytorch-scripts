@@ -26,3 +26,4 @@ if %CMAKE_GENERATOR% EQU "Visual Studio 14 2015 Win64" (
 )
 
 msbuild /p:Configuration=%CONFIG% /p:Platform=x64 /m:%MAX_JOBS% INSTALL.vcxproj /p:PreferredToolArchitecture=x64
+
