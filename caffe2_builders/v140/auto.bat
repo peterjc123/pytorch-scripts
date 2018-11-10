@@ -91,12 +91,14 @@ rem Building Debug in %CAFFE2_ROOT%\build\Debug
 if %BUILD_DEBUG% EQU 1 (
     set CONFIG=Debug
     call %~dp0%msbuild.bat
+    if errorlevel 1 exit /b 1
 )
 
 rem Building Release in %CAFFE2_ROOT%\build\Release
 if %BUILD_RELEASE% EQU 1 (
     set CONFIG=Release
     call %~dp0%msbuild.bat
+    if errorlevel 1 exit /b 1
 )
 
 cd %ORIGINAL_DIR%
