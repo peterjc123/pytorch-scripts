@@ -6,12 +6,14 @@ rem %CAFFE2_ROOT%\build\Debug for Debug and
 rem %CAFFE2_ROOT%\build\Release for Release
 set CAFFE2_ROOT=%~dp0%\pytorch
 
+cd %CAFFE2_ROOT%\..
+
 rem Cloning repository if it doesn't exist
 if not exist pytorch (
     set PYTORCH_BRANCH=windows-shared-build
     set PYTORCH_REPO=ArutyunovG
     call  %~dp0%..\..\internal\clone.bat
-    cd %ORIGINAL_DIR%
+    cd %CAFFE2_ROOT%\..
 )
 
 rem Should build folder be deleted and build start from scratch?
