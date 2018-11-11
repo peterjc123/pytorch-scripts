@@ -16,6 +16,10 @@ if not exist pytorch (
     cd %CAFFE2_ROOT%\..
 )
 
+if NOT DEFINED DOWNLOAD_DEPS (
+    set DOWNLOAD_DEPS=1
+)
+
 rem Should build folder be deleted and build start from scratch?
 if NOT DEFINED REBUILD (
     set REBUILD=0
@@ -87,6 +91,10 @@ python -m pip install pyyaml
 
 if not exist %CAFFE2_ROOT%\build (
     mkdir %CAFFE2_ROOT%\build
+)
+
+if %DOWNLOAD_DEPS% EQU 1 (
+    call %~dp0%download_deps.bat
 )
 
 rem Building Debug in %CAFFE2_ROOT%\build\Debug
