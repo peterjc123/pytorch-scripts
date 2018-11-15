@@ -1,0 +1,144 @@
+
+variables:
+  pytorch.branch: master
+  pytorch.repo: pytorch
+  build.pytorch.enabled: true
+  build.caffe.enabled: true
+  use.sccache: false
+
+jobs:
+- job: 'PyTorch_Test'
+  timeoutInMinutes: 0
+  cancelTimeoutInMinutes: 5
+  condition: eq(variables['build.pytorch.enabled'], 'true')
+
+  pool:
+    vmImage: 'vs2017-win2016'
+
+  steps:
+  - task: BatchScript@1
+    displayName: 'Environment fix'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/env_fix.bat'
+
+      modifyEnvironment: false
+
+  - task: BatchScript@1
+    displayName: 'Install 7Zip'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/7z_install.bat'
+
+      modifyEnvironment: true
+
+  - script: 'choco install -y 7Zip' # Not stable
+    displayName: 'Install 7Zip'
+    enabled: false
+
+  - task: BatchScript@1
+    displayName: 'Install Conda'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/conda_install.bat'
+
+      modifyEnvironment: true
+
+  - task: BatchScript@1
+    displayName: 'Install MKL'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/mkl_install.bat'
+
+      modifyEnvironment: true
+
+  - task: BatchScript@1
+    displayName: 'Setup sccache'
+    condition: eq(variables['use.sccache'], 'true')
+    inputs:
+      filename: '.github/azure-pipelines-scripts/sccache_setup.bat'
+
+      modifyEnvironment: true
+
+  - script: 'call cpu.bat /y'
+    displayName: Build
+    env:
+      MAX_JOBS: 2
+      SKIP_VS_VER_CHECK: 1
+
+  - task: BatchScript@1
+    displayName: 'Debug sccache'
+    condition: eq(variables['use.sccache'], 'true')
+    inputs:
+      filename: '.github/azure-pipelines-scripts/sccache_debug.bat'
+
+      modifyEnvironment: false
+
+  - task: BatchScript@1
+    displayName: 'Update sccache'
+    condition: eq(variables['use.sccache'], 'true')
+    inputs:
+      filename: '.github/azure-pipelines-scripts/sccache_update.bat'
+
+      modifyEnvironment: false
+
+- job: 'Caffe2_Test'
+  timeoutInMinutes: 0
+  cancelTimeoutInMinutes: 5
+  condition: eq(variables['build.caffe.enabled'], 'true')
+
+  pool:
+    vmImage: 'vs2015-win2012r2'
+
+  steps:
+  - task: BatchScript@1
+    displayName: 'Install 7Zip'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/7z_install.bat'
+
+      modifyEnvironment: true
+
+  - script: 'choco install -y 7Zip' # Not stable
+    displayName: 'Install 7Zip'
+    enabled: false
+
+  - task: BatchScript@1
+    displayName: 'Install Conda'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/conda_install.bat'
+
+      modifyEnvironment: true
+
+  - task: BatchScript@1
+    displayName: 'Install MKL'
+    inputs:
+      filename: '.github/azure-pipelines-scripts/mkl_install.bat'
+
+      modifyEnvironment: true
+
+  - task: BatchScript@1
+    displayName: 'Setup sccache'
+    condition: eq(variables['use.sccache'], 'true')
+    inputs:
+      filename: '.github/azure-pipelines-scripts/sccache_setup.bat'
+
+      modifyEnvironment: true
+
+  - script: 'call caffe2_builders/v140/auto.bat'
+    displayName: Build
+    env:
+      MAX_JOBS: 2
+      BUILD_RELEASE: 1
+      BUILD_DEBUG: 0
+
+  - task: BatchScript@1
+    displayName: 'Debug sccache'
+    condition: eq(variables['use.sccache'], 'true')
+    inputs:
+      filename: '.github/azure-pipelines-scripts/sccache_debug.bat'
+
+      modifyEnvironment: false
+
+  - task: BatchScript@1
+    displayName: 'Update sccache'
+    condition: eq(variables['use.sccache'], 'true')
+    inputs:
+      filename: '.github/azure-pipelines-scripts/sccache_update.bat'
+
+      modifyEnvironment: false
