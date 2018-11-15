@@ -10,8 +10,6 @@ cd %CAFFE2_ROOT%\..
 
 rem Cloning repository if it doesn't exist
 if not exist pytorch (
-    set PYTORCH_BRANCH=windows-shared-build
-    set PYTORCH_REPO=ArutyunovG
     call  %~dp0%..\..\internal\clone.bat
     cd %CAFFE2_ROOT%\..
 )
