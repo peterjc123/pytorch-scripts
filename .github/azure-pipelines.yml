@@ -1,7 +1,7 @@
 
 variables:
-  pytorch.branch: windows-shared-build
-  pytorch.repo: ArutyunovG
+  pytorch.branch: master
+  pytorch.repo: pytorch
   build.pytorch.enabled: true
   build.caffe.enabled: true
   use.sccache: false
