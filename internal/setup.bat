@@ -53,8 +53,33 @@ pushd %SRC_DIR%
 
 IF NOT exist "setup.py" (
     cd pytorch
+
 )
+
+if "%BUILD_PYTHONLESS%" == "" goto pytorch else goto libtorch
+
+:libtorch
+set VARIANT=shared-with-deps
+
+mkdir build
+pushd build
+python ../tools/build_libtorch.py
+popd
+
+IF ERRORLEVEL 1 goto no
+IF NOT ERRORLEVEL 0 goto no
+
+echo LibTorch is built in %CD%\build.
+
+goto build_end
+
+:pytorch
 python setup.py install
+
+:build_end
+
+IF ERRORLEVEL 1 goto no
+IF NOT ERRORLEVEL 0 goto no
 
 goto :eof
 

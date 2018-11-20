@@ -11,6 +11,13 @@ jobs:
   timeoutInMinutes: 0
   cancelTimeoutInMinutes: 5
   condition: eq(variables['build.pytorch.enabled'], 'true')
+  strategy:
+    maxParallel: 10
+    matrix:
+      LIBTORCH:
+        BUILD_PYTHONLESS: 1
+      MAIN:
+        BUILD_PYTHONLESS: ''
 
   pool:
     vmImage: 'vs2017-win2016'
