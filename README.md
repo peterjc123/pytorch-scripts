@@ -57,8 +57,8 @@ And here are the libtorch packages. Only shared build is supported now.
 
 | Configuration / LibTorch version | Shared library                                               |
 | -------------------------------- | ------------------------------------------------------------ |
-| Windows x64 CPU                  | [![Build status](https://dev.azure.com/pytorch/PyTorch/_apis/build/status/peterjc123.builder?branchName=master&jobName=Windows_CPU_Wheels_Build&configuration=LIBTORCH)](https://dev.azure.com/peterjc123/46ef0f8e-f34b-4a52-b6e0-c1000caf14a1/_apis/git/repositories/49b30ad3-8e9b-43ff-bbc8-87179a36d246/Items?path=%2Fwheels%2Fcpu%2Ftorch-1.0-cp35-cp35m-win_amd64.whl&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=wheels_3.5&download=true&resolveLfs=true&%24format=octetStream&api-version=5.0-preview.1) |
-| Windows x64 CUDA 9.0             | [![Build status](https://dev.azure.com/pytorch/PyTorch/_apis/build/status/peterjc123.builder?branchName=master&jobName=Windows_CUDA90_Wheels_Build&configuration=LIBTORCH)](https://dev.azure.com/peterjc123/46ef0f8e-f34b-4a52-b6e0-c1000caf14a1/_apis/git/repositories/49b30ad3-8e9b-43ff-bbc8-87179a36d246/Items?path=%2Fwheels%2Fcuda90%2Ftorch-1.0-cp35-cp35m-win_amd64.whl&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=wheels_3.5_cuda90&download=true&resolveLfs=true&%24format=octetStream&api-version=5.0-preview.1) |
+| Windows x64 CPU                  | [![Build status](https://dev.azure.com/pytorch/PyTorch/_apis/build/status/peterjc123.builder?branchName=master&jobName=Windows_CPU_Wheels_Build&configuration=LIBTORCH)](https://dev.azure.com/peterjc123/46ef0f8e-f34b-4a52-b6e0-c1000caf14a1/_apis/git/repositories/49b30ad3-8e9b-43ff-bbc8-87179a36d246/Items?path=%2Fwheels%2Fcpu%2Flibtorch-shared-with-deps-1.0.zip&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=wheels_3&download=true&resolveLfs=true&%24format=octetStream&api-version=5.0-preview.1) |
+| Windows x64 CUDA 9.0             | [![Build status](https://dev.azure.com/pytorch/PyTorch/_apis/build/status/peterjc123.builder?branchName=master&jobName=Windows_CUDA90_Wheels_Build&configuration=LIBTORCH)](https://dev.azure.com/peterjc123/46ef0f8e-f34b-4a52-b6e0-c1000caf14a1/_apis/git/repositories/49b30ad3-8e9b-43ff-bbc8-87179a36d246/Items?path=%2Fwheels%2Fcpu%2Flibtorch-shared-with-deps-1.0.zip&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=wheels_3_cuda90&download=true&resolveLfs=true&%24format=octetStream&api-version=5.0-preview.1) |
 
 ## How to find the package and install?
 
@@ -131,6 +131,9 @@ set SKIP_VS_VER_CHECK=1
 
 # If you want to skip prompt for building for Python 2.7 (Not recommended)
 set SKIP_PY_VER_CHECK=1
+
+# If you want to build for LibTorch
+set BUILD_PYTHONLESS=1
 
 ################################################################################
 # These are the available scripts that you can use.
