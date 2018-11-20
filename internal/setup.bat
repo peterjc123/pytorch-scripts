@@ -53,7 +53,6 @@ pushd %SRC_DIR%
 
 IF NOT exist "setup.py" (
     cd pytorch
-
 )
 
 if "%BUILD_PYTHONLESS%" == "" goto pytorch else goto libtorch
