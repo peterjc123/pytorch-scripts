@@ -11,7 +11,7 @@ if %CMAKE_GENERATOR% EQU "Visual Studio 14 2015 Win64" (
                              -DCMAKE_INSTALL_PREFIX=%CAFFE2_ROOT%\build\%CONFIG%\install ^
                              -DCMAKE_CXX_COMPILER=%CXX% ^
                              -DCMAKE_C_COMPILER=%CC% ^
-                             -DCMAKE_LINKER=%CMAKE_LINER% ^
+                             -DCMAKE_LINKER=%CMAKE_LINKER% ^
                              -DBUILD_C10_EXPERIMENTAL_OPS=OFF ^
                              -DBUILD_SHARED_LIBS=ON ^
                              -DBUILD_BINARY=ON
