@@ -61,7 +61,7 @@ if "%BUILD_PYTHONLESS%" == "" goto pytorch else goto libtorch
 set VARIANT=shared-with-deps
 
 mkdir libtorch
-set "CMAKE_INSTALL_PREFIX=%CD%\libtorch"
+set "INSTALL_DIR=%CD%\libtorch"
 
 mkdir build
 pushd build
