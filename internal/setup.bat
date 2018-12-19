@@ -28,6 +28,7 @@ IF NOT "%CMAKE_GENERATOR%" == "Ninja" goto reactivate_end
 
 set SRC_DIR=%~dp0\..
 
+:activate
 setlocal
 call "%VS15VCVARSALL%" x64 -vcvars_ver=14.11
 call "%VS15VCVARSALL%" x86_amd64 -vcvars_ver=14.11
@@ -37,8 +38,14 @@ IF ERRORLEVEL 1 (
     echo VS 14.11 toolset not found
     endlocal
     IF NOT "%SKIP_VS_VER_CHECK%" == "1" (
-        echo Use ^`set SKIP_VS_VER_CHECK^=1^` to override this error.
-        goto no
+        IF %AUTO_RESOLVE_VALUE% GEQ 1 (
+            call internal\auto_resolve.bat vs1411
+            IF ERRORLEVEL 1 exit /b 1
+            goto activate
+        ) ELSE (
+            echo Use ^`set SKIP_VS_VER_CHECK^=1^` to override this error.
+            goto no
+        )
     )
 ) ELSE (
     goto reactivate_end

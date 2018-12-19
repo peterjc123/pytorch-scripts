@@ -40,6 +40,29 @@ IF NOT "%CUDA_PATH_V8_0%"=="" IF "%CUDA_PATH_V8_0%"=="%CUDA_PATH%" (
     )
 )
 
+
+IF "%CUDA_PATH_V8_0%"=="%CUDA_PATH%" (
+    set CUDA_VERSION=80
+    set CUDA_VERSION_STR=8.0
+)
+IF "%CUDA_PATH_V9_0%"=="%CUDA_PATH%" (
+    set CUDA_VERSION=90
+    set CUDA_VERSION_STR=9.0
+)
+IF "%CUDA_PATH_V9_1%"=="%CUDA_PATH%" (
+    set CUDA_VERSION=91
+    set CUDA_VERSION_STR=9.1
+)
+IF "%CUDA_PATH_V9_2%"=="%CUDA_PATH%" (
+    set CUDA_VERSION=92
+    set CUDA_VERSION_STR=9.2
+)
+IF "%CUDA_PATH_V10_0%"=="%CUDA_PATH%" (
+    set CUDA_VERSION=100
+    set CUDA_VERSION_STR=10.0
+)
+
+
 :optcheck
 
 call internal\check_opts.bat
