@@ -91,7 +91,7 @@ jobs:
   condition: eq(variables['build.caffe.enabled'], 'true')
 
   pool:
-    vmImage: 'vs2015-win2012r2'
+    vmImage: 'vs2017-win2016'
 
   steps:
   - task: BatchScript@1
