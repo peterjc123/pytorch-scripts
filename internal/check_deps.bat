@@ -23,6 +23,7 @@ for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio
     if exist "%%i" if exist "%%i\VC\Auxiliary\Build\vcvarsall.bat" (
         set "VS15INSTALLDIR=%%i"
         set "VS15VCVARSALL=%%i\VC\Auxiliary\Build\vcvarsall.bat"
+        set "MSBUILD_EXE=%%i\MSBuild\15.0\Bin\MSBuild.exe"
         goto vswhere
     )
 )
@@ -30,6 +31,11 @@ for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio
 :vswhere
 IF "%VS15VCVARSALL%"=="" (
     echo Visual Studio 2017 C++ BuildTools is required to compile PyTorch on Windows
+    exit /b 1
+)
+
+IF NOT EXIST "%MSBUILD_EXE%" (
+    echo Visual Studio 2017 C++ MSBuild.exe could not be located
     exit /b 1
 )
 

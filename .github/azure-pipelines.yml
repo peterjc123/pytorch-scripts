@@ -127,7 +127,7 @@ jobs:
 
       modifyEnvironment: true
 
-  - script: 'call caffe2_builders/v140/auto.bat'
+  - script: 'call caffe2_builders/v141/auto.bat'
     displayName: Build
     env:
       MAX_JOBS: 2

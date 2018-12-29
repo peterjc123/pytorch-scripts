@@ -14,6 +14,9 @@ if not exist pytorch (
     cd %CAFFE2_ROOT%\..
 )
 
+call %~dp0%..\..\internal\check_deps.bat
+if errorlevel 1 exit /b 1
+
 rem Should build folder be deleted and build start from scratch?
 if NOT DEFINED REBUILD (
     set REBUILD=0

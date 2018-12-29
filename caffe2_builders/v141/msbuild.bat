@@ -25,19 +25,12 @@ if %CMAKE_GENERATOR% EQU "Visual Studio 15 2017 Win64" (
     exit
 )
 
-rem
-rem One has to use COM-interfaces to catch the exact VS location, registry doesn't help anymore.
-rem We just hardcode it here.
-rem
-rem Also note, that we don't use 'cmake --build ...', since
-rem '-jN' option specifies parallel number of projects, but not compiled files.
-rem
-"C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe"                             ^
-                                                                                                INSTALL.vcxproj             ^
-                                                                                                /p:Configuration=%CONFIG%   ^
-                                                                                                /p:Platform=x64             ^
-                                                                                                /p:VisualStudioVersion=15.0 ^
-                                                                                                /p:CL_MPCount=%MAX_JOBS%
+
+"%MSBUILD_EXE%" INSTALL.vcxproj             ^
+                /p:Configuration=%CONFIG%   ^
+                /p:Platform=x64             ^
+                /p:VisualStudioVersion=15.0 ^
+                /p:CL_MPCount=%MAX_JOBS%
     
 if errorlevel 1 exit /b 1
 
