@@ -22,7 +22,7 @@ if %CMAKE_GENERATOR% EQU "Visual Studio 15 2017 Win64" (
     echo "Error: Script supports only Visual Studio 15 2017 Win64 generator"
     echo "Exiting..."
     cd %ORIGINAL_DIR%
-    exit
+    exit /b 1
 )
 
 
