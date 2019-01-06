@@ -91,7 +91,7 @@ jobs:
   condition: eq(variables['build.caffe.enabled'], 'true')
 
   pool:
-    vmImage: 'vs2015-win2012r2'
+    vmImage: 'vs2017-win2016'
 
   steps:
   - task: BatchScript@1
@@ -127,7 +127,7 @@ jobs:
 
       modifyEnvironment: true
 
-  - script: 'call caffe2_builders/v140/auto.bat'
+  - script: 'call caffe2_builders/v141/auto.bat'
     displayName: Build
     env:
       MAX_JOBS: 2
