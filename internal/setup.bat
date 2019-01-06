@@ -71,7 +71,7 @@ popd
 IF ERRORLEVEL 1 goto no
 IF NOT ERRORLEVEL 0 goto no
 
-move /Y libtorch\bin\*.dll libtorch\lib\
+IF EXIST libtorch\bin move /Y libtorch\bin\*.dll libtorch\lib\
 
 echo LibTorch is built in %CD%\libtorch.
 
