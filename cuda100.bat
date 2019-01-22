@@ -25,7 +25,7 @@ IF "%NVTOOLSEXT_PATH%"=="" (
 )
 
 IF "%CUDA_PATH_V10_0%"=="" (
-    echo CUDA 9.2 not found, disabling it
+    echo CUDA 10.0 not found, disabling it
     set NO_CUDA=1
 ) ELSE (
     set "CUDA_PATH=%CUDA_PATH_V10_0%"
