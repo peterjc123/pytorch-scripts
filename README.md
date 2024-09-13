@@ -1,3 +1,8 @@
+# Update
+This repo **won't** be updated anymore. Please refer to https://github.com/pytorch/builder/tree/main/windows for PyTorch building scripts and https://pytorch.org for PyTorch installation.
+
+# Original Content
+
 It is a repo that contains scripts that makes using PyTorch on Windows easier.
 
 # Easy Installation
